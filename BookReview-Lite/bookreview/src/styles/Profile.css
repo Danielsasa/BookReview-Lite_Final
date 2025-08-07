@@ -1,0 +1,268 @@
+/* Animaciones recomendadas */
+.profile-container {
+  animation: fadeInProfile 0.7s ease;
+}
+@keyframes fadeInProfile {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.profile-avatar img, .avatar-placeholder {
+  transition: box-shadow .3s, transform .3s, background .3s, color .3s;
+}
+.profile-avatar img:hover, .avatar-placeholder:hover {
+  box-shadow: 0 4px 16px #1976d2aa;
+  transform: scale(1.12) rotate(-2deg);
+  background: #1976d2;
+  color: #fff;
+}
+.edit-profile-btn, .delete-review-btn, button[type="submit"] {
+  transition: background .2s, transform .2s;
+}
+.edit-profile-btn:hover, .delete-review-btn:hover, button[type="submit"]:hover {
+  transform: scale(1.07);
+  background: #145ea8;
+}
+.notif-anim {
+  animation: fadeNotif 0.6s;
+}
+@keyframes fadeNotif {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.profile-avatar img {
+  transition: box-shadow .3s, transform .3s;
+}
+.profile-avatar img:hover {
+  box-shadow: 0 4px 16px rgba(25,118,210,.18);
+  transform: scale(1.08);
+}
+.avatar-placeholder {
+  transition: background .3s, color .3s, box-shadow .3s;
+}
+.avatar-placeholder:hover {
+  background: #1976d2;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(25,118,210,.18);
+}
+.review-item {
+  transition: background .2s, box-shadow .2s;
+}
+.review-item.dark {
+  box-shadow: 0 2px 8px rgba(0,0,0,.22);
+}
+/* Modo oscuro para el perfil */
+.profile-container.dark {
+  background: #181a1b;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+}
+.profile-header.dark {
+  background: linear-gradient(90deg, #222 60%, #181a1b 100%);
+  color: #fff;
+}
+.profile-info .avatar-placeholder {
+  background: #222;
+  color: #90caf9;
+  border: 2px solid #333;
+}
+.review-item.dark {
+  background: #23272a;
+  color: #eee;
+}
+.review-item.dark:hover {
+  background: #2c3136;
+}
+.review-details strong {
+  color: #90caf9;
+}
+.edit-profile-btn {
+  background: #1976d2;
+  color: #fff;
+}
+.edit-profile-btn:hover {
+  background: #145ea8;
+}
+.delete-review-btn {
+  background: #e53935;
+  color: #fff;
+}
+.delete-review-btn:hover {
+  background: #b71c1c;
+}
+/* Nuevo header más estético */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(90deg, #2a7ae4 60%, #fff 100%);
+  color: #fff;
+  border-radius: 16px 16px 0 0;
+  padding: 2.2rem 1rem 1.5rem 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  overflow: hidden;
+}
+.profile-header h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 4px #0005;
+  margin-bottom: 0.2rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.profile-header span {
+  font-size: 3.2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-shadow: 1px 2px 8px #0002;
+}
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+.profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  background: #e4eaf7;
+  color: #2a7ae4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border: 2px solid #eee;
+  box-shadow: 0 1px 6px rgba(0,0,0,.07);
+}
+.profile-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  padding: 2.5rem 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.profile-container header h1 {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+  color: #222;
+  text-align: center;
+}
+
+.profile-container article p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+  text-align: center;
+}
+
+.profile-container img[alt="Avatar"] {
+  display: block;
+  margin: 0.5rem auto 1rem auto;
+  border-radius: 50%;
+  border: 2px solid #eee;
+  box-shadow: 0 1px 6px rgba(0,0,0,.07);
+}
+
+.profile-container h2 {
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem 0;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  padding-bottom: .3rem;
+  text-align: left;
+}
+
+.profile-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.review-item {
+  background: #f6f8fa;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: background 0.2s;
+}
+
+.review-item:hover {
+  background: #e9eff7;
+}
+
+.review-item img {
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+}
+
+.review-details {
+  flex: 1;
+}
+
+.review-details strong {
+  color: #1a73e8;
+  font-size: 1.1rem;
+}
+
+.review-details span {
+  color: #888;
+  font-size: .95rem;
+  margin-left: 8px;
+}
+/* ...El resto de tu CSS... */
+
+.edit-profile-btn {
+  display: block;
+  margin: 0.5rem auto 1.5rem auto;
+  padding: 0.5rem 1.2rem;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(25,118,210,.12);
+  transition: background .2s;
+}
+.edit-profile-btn:hover {
+  background: #145ea8;
+}
+
+.delete-review-btn {
+  margin-left: 20px;
+  padding: 0.4rem 0.8rem;
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: .95rem;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(229,57,53,.11);
+  transition: background .2s;
+}
+.delete-review-btn:hover {
+  background: #b71c1c;
+}
+
+@media (max-width: 600px) {
+  .profile-container {
+    padding: 1rem;
+  }
+}
+

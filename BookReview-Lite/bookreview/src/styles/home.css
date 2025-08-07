@@ -3,23 +3,31 @@
 }
 
 .home-title {
-  font-size: 2rem;
+  font-size: 2.3rem;
   margin-bottom: 1rem;
+  color: #fff;
+  background: linear-gradient(90deg, #2a7ae4 60%, #e4eaf7 100%);
+  border-radius: 12px 12px 0 0;
+  padding: 1.2rem 1rem 1.2rem 1rem;
+  text-align: center;
+  text-shadow: 1px 1px 4px #0005;
 }
 
 .home-search {
-  margin: 1rem 0;
-  padding: 0.5rem 1rem;
+  margin: 1rem auto;
+  padding: 0.7rem 1.2rem;
   width: 100%;
   max-width: 400px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 1px solid #2a7ae4;
+  box-shadow: 0 2px 8px #2a7ae422;
+  display: block;
 }
 
 .book-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   margin-top: 2rem;
 }

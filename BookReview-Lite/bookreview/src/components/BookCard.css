@@ -1,3 +1,19 @@
+.dark .book-card {
+  background: #23272a !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px #0008;
+}
+.dark .book-card:hover {
+  background: #181a1b !important;
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px #000a;
+}
+.dark .book-cover {
+  border: 2px solid #90caf9 !important;
+}
+.dark .book-info {
+  color: #fff !important;
+}
 .book-card {
   display: flex;
   gap: 16px;

@@ -1,16 +1,24 @@
+
 .book-detail-container {
   max-width: 800px;
   margin: auto;
   padding: 2rem;
-  background: #fff;
+  background: var(--bookdetail-bg, #fff);
   border-radius: 10px;
   box-shadow: 0 4px 16px #0002;
+  transition: background 0.3s;
 }
+
 
 .book-detail-header {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 2rem;
+  background: var(--bookdetail-header-bg, linear-gradient(90deg, #2a7ae4 60%, #fff 100%));
+  color: var(--bookdetail-header-color, #fff);
+  border-radius: 10px 10px 0 0;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  transition: background 0.3s, color 0.3s;
 }
 
 .book-detail-cover {
@@ -22,6 +30,8 @@
 
 .book-detail-info h2 {
   margin-bottom: 0.5rem;
+  color: var(--bookdetail-title, #fff);
+  text-shadow: 1px 1px 4px #0005;
 }
 
 .book-detail-reviews {
@@ -31,12 +41,32 @@
 .review-item {
   margin-bottom: 1rem;
   padding: 1rem;
-  background: #f9f9f9;
+  background: var(--bookdetail-review-bg, #f3f7ff);
   border-radius: 8px;
+  box-shadow: 0 2px 8px #2a7ae422;
+  border-left: 4px solid #2a7ae4;
+  color: var(--bookdetail-review-color, #222);
+  transition: background 0.3s, color 0.3s;
 }
 
 .book-detail-form {
   margin-top: 2rem;
   border-top: 1px solid #ccc;
   padding-top: 1rem;
+}
+
+/* Modo oscuro */
+body.dark .book-detail-container {
+  --bookdetail-bg: #181c24;
+}
+body.dark .book-detail-header {
+  --bookdetail-header-bg: linear-gradient(90deg, #232a3b 60%, #181c24 100%);
+  --bookdetail-header-color: #e4eaf7;
+}
+body.dark .book-detail-info h2 {
+  --bookdetail-title: #e4eaf7;
+}
+body.dark .review-item {
+  --bookdetail-review-bg: #232a3b;
+  --bookdetail-review-color: #e4eaf7;
 }

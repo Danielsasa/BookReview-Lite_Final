@@ -1,6 +1,6 @@
 import React from 'react';
-import './BookCard.css'; // Assuming you have a CSS file for styling
-
+import { Link } from 'react-router-dom';
+import './BookCard.css';
 
 function BookCard({ book }) {
   const averageRating = book.reviews.length
@@ -8,14 +8,16 @@ function BookCard({ book }) {
     : "Sin calificaciones";
 
   return (
-    <div className="book-card">
-      <img src={book.cover} alt={book.title} className="book-cover" />
-      <div className="book-info">
-        <h3>{book.title}</h3>
-        <p><strong>{book.author}</strong> ({book.year})</p>
-        <p><em>Rating:</em> {averageRating} ⭐</p>
+    <Link to={`/book/${book.id}`} style={{textDecoration:'none'}}>
+      <div className="book-card" style={{cursor:'pointer',transition:'box-shadow .2s'}}>
+        <img src={book.cover} alt={book.title} className="book-cover" />
+        <div className="book-info">
+          <h3 style={{color:'#2a7ae4'}}>{book.title}</h3>
+          <p><strong>{book.author}</strong> ({book.year})</p>
+          <p><em>Rating:</em> {averageRating} ⭐</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

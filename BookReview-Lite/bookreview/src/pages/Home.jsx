@@ -7,8 +7,9 @@ function Home() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    // Simula carga desde JSON
-    setBooks(booksData);
+    // Cargar desde localStorage si existe, si no, el JSON original
+    const storedBooks = JSON.parse(localStorage.getItem('books')) || booksData;
+    setBooks(storedBooks);
   }, []);
 
   // Filtrar por búsqueda (título o autor)
@@ -28,29 +29,18 @@ function Home() {
   });
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Catálogo de Libros</h1>
+    <div className="home-container">
+      <h1 className="home-title">📚 Catálogo de Libros</h1>
 
       <input
+        className="home-search"
         type="text"
         placeholder="Buscar por título o autor..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        style={{
-          margin: '1rem 0',
-          padding: '0.5rem 1rem',
-          width: '100%',
-          maxWidth: '400px',
-          fontSize: '1rem',
-        }}
       />
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-        gap: '1.5rem',
-        marginTop: '2rem',
-      }}>
+      <div className="book-grid">
         {sortedBooks.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}
