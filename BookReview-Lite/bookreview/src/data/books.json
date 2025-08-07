@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "title": "Título del Libro 1",
+    "author": "Autor 1",
+    "year": 2001,
+    "cover": "https://picsum.photos/120/180?random=1",
+    "synopsis": "Esta es la sinopsis del libro número 1.",
+    "reviews": []
+  },
+  {
+    "id": "2",
+    "title": "Título del Libro 2",
+    "author": "Autor 2",
+    "year": 2002,
+    "cover": "https://picsum.photos/120/180?random=2",
+    "synopsis": "Esta es la sinopsis del libro número 2.",
+    "reviews": []
+  },
+  {
+    "id": "3",
+    "title": "Título del Libro 3",
+    "author": "Autor 3",
+    "year": 2003,
+    "cover": "https://picsum.photos/120/180?random=3",
+    "synopsis": "Esta es la sinopsis del libro número 3.",
+    "reviews": []
+  },
+  {
+    "id": "4",
+    "title": "Título del Libro 4",
+    "author": "Autor 4",
+    "year": 2004,
+    "cover": "https://picsum.photos/120/180?random=4",
+    "synopsis": "Esta es la sinopsis del libro número 4.",
+    "reviews": []
+  },
+  {
+    "id": "5",
+    "title": "Título del Libro 5",
+    "author": "Autor 5",
+    "year": 2005,
+    "cover": "https://picsum.photos/120/180?random=5",
+    "synopsis": "Esta es la sinopsis del libro número 5.",
+    "reviews": []
+  },
+  {
+    "id": "6",
+    "title": "Título del Libro 6",
+    "author": "Autor 6",
+    "year": 2006,
+    "cover": "https://picsum.photos/120/180?random=6",
+    "synopsis": "Esta es la sinopsis del libro número 6.",
+    "reviews": []
+  },
+  {
+    "id": "7",
+    "title": "Título del Libro 7",
+    "author": "Autor 7",
+    "year": 2007,
+    "cover": "https://picsum.photos/120/180?random=7",
+    "synopsis": "Esta es la sinopsis del libro número 7.",
+    "reviews": []
+  },
+  {
+    "id": "8",
+    "title": "Título del Libro 8",
+    "author": "Autor 8",
+    "year": 2008,
+    "cover": "https://picsum.photos/120/180?random=8",
+    "synopsis": "Esta es la sinopsis del libro número 8.",
+    "reviews": []
+  },
+  {
+    "id": "9",
+    "title": "Título del Libro 9",
+    "author": "Autor 9",
+    "year": 2009,
+    "cover": "https://picsum.photos/120/180?random=9",
+    "synopsis": "Esta es la sinopsis del libro número 9.",
+    "reviews": []
+  },
+  {
+    "id": "10",
+    "title": "Título del Libro 10",
+    "author": "Autor 10",
+    "year": 2010,
+    "cover": "https://picsum.photos/120/180?random=10",
+    "synopsis": "Esta es la sinopsis del libro número 10.",
+    "reviews": []
+  },
+  {
+    "id": "11",
+    "title": "Título del Libro 11",
+    "author": "Autor 11",
+    "year": 2011,
+    "cover": "https://picsum.photos/120/180?random=11",
+    "synopsis": "Esta es la sinopsis del libro número 11.",
+    "reviews": []
+  },
+  {
+    "id": "12",
+    "title": "Título del Libro 12",
+    "author": "Autor 12",
+    "year": 2012,
+    "cover": "https://picsum.photos/120/180?random=12",
+    "synopsis": "Esta es la sinopsis del libro número 12.",
+    "reviews": []
+  }
+]
