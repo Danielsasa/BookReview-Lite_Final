@@ -1,0 +1,129 @@
+.addbook-anim {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: var(--addbook-bg, #fff);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px #2a7ae422;
+  animation: fadeInBlock 0.7s;
+}
+
+.addbook-anim h2 {
+  color: var(--addbook-title, #2a7ae4);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.addbook-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.addbook-label {
+  font-weight: bold;
+}
+
+.addbook-input, .addbook-textarea {
+  width: 100%;
+  margin-top: 0.3rem;
+  margin-bottom: 0.7rem;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1.5px solid #2a7ae4;
+  font-size: 1rem;
+  background: var(--addbook-input-bg, #fff);
+  color: var(--addbook-input-color, #222);
+  transition: background 0.3s, color 0.3s;
+}
+
+.addbook-preview {
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: fadeInBlock 0.7s;
+  background: linear-gradient(135deg,#e4eaf7 60%,#fff 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px #2a7ae422;
+  padding: 1rem 0.5rem;
+  border: 1.5px solid #2a7ae4;
+  position: relative;
+}
+
+.addbook-preview-img {
+  max-width: 120px;
+  max-height: 180px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px #2a7ae422;
+  border: 2px solid #1976d2;
+  transition: transform .3s;
+  transform: scale(1.04);
+  background: #fff;
+}
+
+.addbook-preview-title {
+  font-size: 1.05rem;
+  color: #1976d2;
+  margin-top: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 4px #2a7ae422;
+}
+
+.addbook-preview-badge {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: #1976d2;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 2px 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #2a7ae422;
+  font-weight: bold;
+  opacity: 0.85;
+}
+
+.addbook-error {
+  color: #e53935;
+  background: #fff0f0;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeNotif 0.6s;
+}
+
+.addbook-success {
+  color: #1976d2;
+  background: #e4eaf7;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeNotif 0.6s;
+}
+
+.addbook-btn {
+  background: linear-gradient(90deg,#1976d2 60%,#2a7ae4 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-size: 1.18rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px #2a7ae422;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: background .2s, transform .2s;
+  margin-top: 0.5rem;
+  text-shadow: 0 1px 4px #2a7ae422;
+}
+
+/* Modo oscuro */
+body.dark .addbook-anim {
+  --addbook-bg: #181c24;
+}
+body.dark .addbook-input, body.dark .addbook-textarea {
+  --addbook-input-bg: #232a3b;
+  --addbook-input-color: #e4eaf7;
+}

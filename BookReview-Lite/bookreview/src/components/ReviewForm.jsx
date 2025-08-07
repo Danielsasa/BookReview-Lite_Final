@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../context/UserContext';
+import '../styles/ReviewForm.css';
+import '../styles/ReviewForm.css';
 
 function ReviewForm({ bookId, addReview }) {
   const { user } = useContext(UserContext);
@@ -29,35 +31,26 @@ function ReviewForm({ bookId, addReview }) {
 
   return (
     <div>
-      <div style={{marginBottom:'1rem', color:'#2a7ae4', fontWeight:'bold'}}>
-        Usuario actual: {user?.username}
-      </div>
-      <form onSubmit={handleSubmit(onSubmit)} style={{ marginTop: '1rem' }}>
+      <div className="review-user">Usuario actual: {user?.username}</div>
+      <form className="review-form" onSubmit={handleSubmit(onSubmit)}>
         <h3>Deja tu reseña</h3>
-        <label>
-          Calificación:
-          <select {...register('rating', { required: 'Selecciona una calificación' })} style={{ marginLeft: '0.5rem' }}>
-            <option value="">Selecciona...</option>
-            {[1,2,3,4,5].map(n => (
-              <option key={n} value={n}>{n} estrella{n>1?'s':''}</option>
-            ))}
+        <label className="review-label">Calificación:
+          <select className="review-input" {...register('rating', { required: 'Selecciona una calificación' })}>
+            <option value="">Selecciona</option>
+            <option value="1">1 ⭐</option>
+            <option value="2">2 ⭐</option>
+            <option value="3">3 ⭐</option>
+            <option value="4">4 ⭐</option>
+            <option value="5">5 ⭐</option>
           </select>
         </label>
-        {errors.rating && <p style={{ color: 'red' }}>{errors.rating.message}</p>}
-
-        <label style={{ display: 'block', marginTop: '0.5rem' }}>
-          Comentario:
-          <textarea
-            {...register('comment', { required: 'El comentario es obligatorio' })}
-            rows={4}
-            style={{ width: '100%', marginTop: 4 }}
-          />
+        {errors.rating && <div className="review-error">{errors.rating.message}</div>}
+        <label className="review-label">Comentario:
+          <textarea className="review-input" {...register('comment', { required: 'El comentario es obligatorio' })} rows={3}/>
         </label>
-        {errors.comment && <p style={{ color: 'red' }}>{errors.comment.message}</p>}
-
-        {submitError && <p style={{ color: 'red' }}>{submitError}</p>}
-
-        <button type="submit" style={{ marginTop: '0.5rem' }}>Enviar reseña</button>
+        {errors.comment && <div className="review-error">{errors.comment.message}</div>}
+        {submitError && <div className="review-error">{submitError}</div>}
+        <button type="submit" className="review-btn">Enviar reseña</button>
       </form>
     </div>
   );

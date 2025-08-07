@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/AddBook.css';
 import booksData from '../data/books.json';
 import { useNavigate } from 'react-router-dom';
 
@@ -67,89 +68,37 @@ function AddBook() {
   };
 
   return (
-    <div className="addbook-anim" style={{maxWidth:'500px',margin:'2rem auto',background:'var(--addbook-bg, #fff)',padding:'2rem',borderRadius:'16px',boxShadow:'0 4px 16px #2a7ae422',animation:'fadeInBlock 0.7s'}}>
-      <h2 style={{color:'var(--addbook-title, #2a7ae4)',textAlign:'center',marginBottom:'1.5rem'}}>Agregar nuevo libro</h2>
-      <form onSubmit={handleSubmit} style={{display:'flex',flexDirection:'column',gap:'1.2rem'}} aria-label="Formulario para agregar libro">
-        <label style={{fontWeight:'bold'}}>Título:
-          <input type="text" value={title} onChange={e=>setTitle(e.target.value)} required style={{width:'100%',marginTop:'0.3rem',marginBottom:'0.7rem',padding:'0.7rem',borderRadius:'8px',border:'1.5px solid #2a7ae4',fontSize:'1rem'}} aria-label="Título del libro"/>
+    <div className="addbook-anim">
+      <h2>Agregar nuevo libro</h2>
+      <form className="addbook-form" onSubmit={handleSubmit} aria-label="Formulario para agregar libro">
+        <label className="addbook-label">Título:
+          <input className="addbook-input" type="text" value={title} onChange={e=>setTitle(e.target.value)} required aria-label="Título del libro"/>
         </label>
-        <label style={{fontWeight:'bold'}}>Autor:
-          <input type="text" value={author} onChange={e=>setAuthor(e.target.value)} required style={{width:'100%',marginTop:'0.3rem',marginBottom:'0.7rem',padding:'0.7rem',borderRadius:'8px',border:'1.5px solid #2a7ae4',fontSize:'1rem'}} aria-label="Autor del libro"/>
+        <label className="addbook-label">Autor:
+          <input className="addbook-input" type="text" value={author} onChange={e=>setAuthor(e.target.value)} required aria-label="Autor del libro"/>
         </label>
-        <label style={{fontWeight:'bold'}}>Año:
-          <input type="number" value={year} onChange={e=>setYear(e.target.value)} required style={{width:'100%',marginTop:'0.3rem',marginBottom:'0.7rem',padding:'0.7rem',borderRadius:'8px',border:'1.5px solid #2a7ae4',fontSize:'1rem'}} aria-label="Año de publicación"/>
+        <label className="addbook-label">Año:
+          <input className="addbook-input" type="number" value={year} onChange={e=>setYear(e.target.value)} required aria-label="Año de publicación"/>
         </label>
-        <label style={{fontWeight:'bold'}}>Género:
-          <input type="text" value={genre} onChange={e=>setGenre(e.target.value)} required placeholder="Ej: Fantasía, Novela, Ciencia Ficción..." style={{width:'100%',marginTop:'0.3rem',marginBottom:'0.7rem',padding:'0.7rem',borderRadius:'8px',border:'1.5px solid #2a7ae4',fontSize:'1rem'}} aria-label="Género literario"/>
+        <label className="addbook-label">Género:
+          <input className="addbook-input" type="text" value={genre} onChange={e=>setGenre(e.target.value)} required placeholder="Ej: Fantasía, Novela, Ciencia Ficción..." aria-label="Género literario"/>
         </label>
-        <label style={{fontWeight:'bold'}}>URL de portada:
-          <input type="text" value={cover} onChange={e=>{setCover(e.target.value); setShowPreview(!!e.target.value);}} placeholder="https://...jpg/png/webp/gif" style={{width:'100%',marginTop:'0.3rem',marginBottom:'0.7rem',padding:'0.7rem',borderRadius:'8px',border:'1.5px solid #2a7ae4',fontSize:'1rem'}} aria-label="URL de portada"/>
+        <label className="addbook-label">URL de portada:
+          <input className="addbook-input" type="text" value={cover} onChange={e=>{setCover(e.target.value); setShowPreview(!!e.target.value);}} placeholder="https://...jpg/png/webp/gif" aria-label="URL de portada"/>
         </label>
         {showPreview && cover && validateImageUrl(cover) && (
-          <div style={{
-            textAlign:'center',
-            marginBottom:'1rem',
-            animation:'fadeInBlock 0.7s',
-            background:'linear-gradient(135deg,#e4eaf7 60%,#fff 100%)',
-            borderRadius:'12px',
-            boxShadow:'0 4px 16px #2a7ae422',
-            padding:'1rem 0.5rem',
-            border:'1.5px solid #2a7ae4',
-            position:'relative'
-          }}>
-            <img src={cover} alt="Previsualización de portada" style={{
-              maxWidth:'120px',
-              maxHeight:'180px',
-              borderRadius:'10px',
-              boxShadow:'0 4px 16px #2a7ae422',
-              border:'2px solid #1976d2',
-              transition:'transform .3s',
-              transform:'scale(1.04)',
-              background:'#fff'
-            }} />
-            <div style={{
-              fontSize:'1.05rem',
-              color:'#1976d2',
-              marginTop:'0.7rem',
-              fontWeight:'bold',
-              letterSpacing:'0.5px',
-              textShadow:'0 1px 4px #2a7ae422'
-            }}>Previsualización de portada</div>
-            <span style={{
-              position:'absolute',
-              top:'10px',
-              right:'14px',
-              background:'#1976d2',
-              color:'#fff',
-              fontSize:'0.8rem',
-              padding:'2px 10px',
-              borderRadius:'8px',
-              boxShadow:'0 2px 8px #2a7ae422',
-              fontWeight:'bold',
-              opacity:'0.85'
-            }}>Preview</span>
+          <div className="addbook-preview">
+            <img src={cover} alt="Previsualización de portada" className="addbook-preview-img" />
+            <div className="addbook-preview-title">Previsualización de portada</div>
+            <span className="addbook-preview-badge">Preview</span>
           </div>
         )}
-        <label style={{fontWeight:'bold'}}>Sinopsis:
-          <textarea value={synopsis} onChange={e=>setSynopsis(e.target.value)} rows={3} style={{width:'100%',marginTop:'0.3rem',marginBottom:'0.7rem',padding:'0.7rem',borderRadius:'8px',border:'1.5px solid #2a7ae4',fontSize:'1rem'}} aria-label="Sinopsis"/>
+        <label className="addbook-label">Sinopsis:
+          <textarea className="addbook-textarea" value={synopsis} onChange={e=>setSynopsis(e.target.value)} rows={3} aria-label="Sinopsis"/>
         </label>
-        {error && <div style={{color:'#e53935',background:'#fff0f0',borderRadius:'8px',padding:'0.5rem 1rem',fontWeight:'bold',textAlign:'center',animation:'fadeNotif 0.6s'}}>{error}</div>}
-        {success && <div style={{color:'#1976d2',background:'#e4eaf7',borderRadius:'8px',padding:'0.5rem 1rem',fontWeight:'bold',textAlign:'center',animation:'fadeNotif 0.6s'}}>{success}</div>}
-        <button type="submit" style={{
-          background:'linear-gradient(90deg,#1976d2 60%,#2a7ae4 100%)',
-          color:'#fff',
-          border:'none',
-          borderRadius:'12px',
-          padding:'1rem 2rem',
-          fontSize:'1.18rem',
-          cursor:'pointer',
-          boxShadow:'0 4px 16px #2a7ae422',
-          fontWeight:'bold',
-          letterSpacing:'0.5px',
-          transition:'background .2s, transform .2s',
-          marginTop:'0.5rem',
-          textShadow:'0 1px 4px #2a7ae422'
-        }}>Agregar libro</button>
+        {error && <div className="addbook-error">{error}</div>}
+        {success && <div className="addbook-success">{success}</div>}
+        <button type="submit" className="addbook-btn">Agregar libro</button>
       </form>
     </div>
   );

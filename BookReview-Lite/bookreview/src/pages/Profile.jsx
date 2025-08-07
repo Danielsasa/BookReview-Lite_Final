@@ -91,44 +91,37 @@ function Profile() {
 
   return (
     <section className={`profile-container${darkMode ? ' dark' : ''}`}> 
-      <header className={`profile-header${darkMode ? ' dark' : ''}`} style={{position:'relative',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',padding:'2.2rem 1rem 1.5rem 1rem',background:'linear-gradient(90deg, #2a7ae4 60%, #fff 100%)',boxShadow:'0 2px 8px rgba(0,0,0,.08)',borderRadius:'16px 16px 0 0',marginBottom:'2rem',overflow:'hidden'}}> 
-        <span style={{fontSize:'3.2rem',marginBottom:'0.5rem',display:'block',textShadow:'1px 2px 8px #0002'}}>👤</span>
-        <h1 style={{fontSize:'2.2rem',fontWeight:'bold',color:'#fff',textShadow:'1px 1px 4px #0005',marginBottom:'0.2rem',textAlign:'center',letterSpacing:'1px'}}>Perfil de Usuario</h1>
-        <button 
-          style={{position:'absolute',top:'1.2rem',right:'1.2rem',padding:'0.5rem 1.2rem',borderRadius:'8px',border:'none',background:darkMode?'#222':'#e4eaf7',color:darkMode?'#fff':'#222',cursor:'pointer',boxShadow:'0 1px 4px rgba(0,0,0,.08)',fontWeight:'bold',fontSize:'1rem',transition:'background .2s'}} 
-          onClick={()=>setDarkMode(m=>!m)}
-          title={darkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-          aria-label={darkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-        >
-          {darkMode ? '🌙 Modo claro' : '🌙 Modo oscuro'}
-        </button>
+      <header className={`profile-header${darkMode ? ' dark' : ''}`}> 
+        <span className="profile-icon">👤</span>
+        <h1 className="profile-title">Perfil de Usuario</h1>
+   
       </header>
       {notif && (
-        <div className="notif-anim" style={{background:'#1976d2',color:'#fff',borderRadius:'8px',padding:'0.7rem 1.2rem',textAlign:'center',margin:'1rem auto',maxWidth:'400px',boxShadow:'0 1px 4px rgba(25,118,210,.12)',fontWeight:'bold'}} role="alert">{notif}</div>
+        <div className="notif-anim" role="alert">{notif}</div>
       )}
       {user ? (
         <article>
           <div className="profile-info">
-            <div className="profile-avatar" style={{transition:'transform .3s',transform:'scale(1.05)'}}>
+            <div className="profile-avatar">
               {avatarPreview ? (
-                <img src={avatarPreview} alt="Avatar" width={80} style={{boxShadow:'0 2px 8px rgba(0,0,0,.12)'}} />
+                <img src={avatarPreview} alt="Avatar" className="profile-avatar-img" />
               ) : (
-                <div className="avatar-placeholder" style={{transition:'background .3s'}}>{user.username?.charAt(0).toUpperCase()}</div>
+                <div className="avatar-placeholder">{user.username?.charAt(0).toUpperCase()}</div>
               )}
             </div>
             <div>
               {!editMode ? (
                 <>
-                  <p style={{fontSize:'1.2rem',marginBottom:'0.3rem',color:darkMode?'#fff':'#222'}}>
+                  <p className="profile-user">
                     <strong>{user.username}</strong>
-                    {user.email && <span style={{color:darkMode?'#90caf9':'#1976d2'}}> (<em>{user.email}</em>)</span>}
+                    {user.email && <span className="profile-user-email"> (<em>{user.email}</em>)</span>}
                   </p>
-                  <button className="edit-profile-btn" onClick={handleEditProfile} style={{position:'relative'}} aria-label="Editar perfil">
-                    <span style={{marginRight:'6px'}}>✏️</span>Editar perfil
+                  <button className="edit-profile-btn" onClick={handleEditProfile} aria-label="Editar perfil">
+                    <span className="edit-profile-icon">✏️</span>Editar perfil
                   </button>
                 </>
               ) : (
-                <form onSubmit={handleEditFormSubmit} style={{display:'flex',flexDirection:'column',gap:'1rem',marginTop:'0.5rem'}} aria-label="Formulario de edición de perfil">
+                <form className="profile-edit-form" onSubmit={handleEditFormSubmit} aria-label="Formulario de edición de perfil">
                   <input
                     ref={editFormRef}
                     name="username"
@@ -136,7 +129,7 @@ function Profile() {
                     value={editForm.username}
                     onChange={handleEditFormChange}
                     placeholder="Nombre de usuario"
-                    style={{padding:'0.5rem',borderRadius:'6px',border:'1px solid #ccc',fontSize:'1rem'}}
+                    className="profile-edit-input"
                     required
                     aria-label="Nombre de usuario"
                   />
@@ -146,7 +139,7 @@ function Profile() {
                     value={editForm.email}
                     onChange={handleEditFormChange}
                     placeholder="Correo electrónico"
-                    style={{padding:'0.5rem',borderRadius:'6px',border:'1px solid #ccc',fontSize:'1rem'}}
+                    className="profile-edit-input"
                     required
                     aria-label="Correo electrónico"
                   />
@@ -155,30 +148,30 @@ function Profile() {
                     type="file"
                     accept="image/*"
                     onChange={handleEditFormChange}
-                    style={{padding:'0.5rem',borderRadius:'6px',border:'1px solid #ccc',fontSize:'1rem'}}
+                    className="profile-edit-input"
                     aria-label="Avatar"
                   />
-                  <div style={{display:'flex',gap:'1rem'}}>
-                    <button type="submit" style={{background:'#1976d2',color:'#fff',border:'none',borderRadius:'6px',padding:'0.5rem 1.2rem',fontWeight:'bold',cursor:'pointer'}}>Guardar</button>
-                    <button type="button" style={{background:'#e53935',color:'#fff',border:'none',borderRadius:'6px',padding:'0.5rem 1.2rem',fontWeight:'bold',cursor:'pointer'}} onClick={()=>setEditMode(false)}>Cancelar</button>
+                  <div className="profile-edit-actions">
+                    <button type="submit" className="profile-edit-btn">Guardar</button>
+                    <button type="button" className="profile-cancel-btn" onClick={()=>setEditMode(false)}>Cancelar</button>
                   </div>
                 </form>
               )}
             </div>
           </div>
-          <h2 style={{marginTop:'2.5rem',color:darkMode?'#fff':'#222'}}>Mis Reseñas</h2>
-          <div style={{marginBottom:'1.5rem',color:darkMode?'#bbb':'#888',fontSize:'1rem'}}>
+          <h2 className="profile-reviews-title">Mis Reseñas</h2>
+          <div className="profile-reviews-list">
             {userReviews.length === 0 ? (
               <p>No has hecho reseñas todavía.</p>
             ) : (
-              <ul style={{padding:0}}>
+              <ul className="profile-reviews-ul">
                 {userReviews.map((review, idx) => (
                   <li key={idx} className={`review-item${darkMode ? ' dark' : ''}`}> 
-                    <img src={review.bookCover} alt={review.bookTitle} width={40} style={{borderRadius:'6px',boxShadow:'0 1px 4px rgba(0,0,0,.10)'}} />
+                    <img src={review.bookCover} alt={review.bookTitle} className="profile-review-cover" />
                     <div className="review-details">
-                      <strong style={{color:darkMode?'#90caf9':'#1a73e8'}}>{review.bookTitle}</strong>
-                      <span style={{color:darkMode?'#bbb':'#888'}}>({new Date(review.date).toLocaleDateString()})</span><br />
-                      <span style={{color:'#e4a72a',fontWeight:'bold'}} aria-label={`Calificación: ${review.rating} estrellas`} title={`Calificación: ${review.rating} estrellas`}>{review.rating} ⭐</span> — <span style={{fontStyle:'italic',color:darkMode?'#eee':'#444'}}>{review.comment}</span>
+                      <strong className="profile-review-title">{review.bookTitle}</strong>
+                      <span className="profile-review-date">({new Date(review.date).toLocaleDateString()})</span><br />
+                      <span className="profile-review-rating" aria-label={`Calificación: ${review.rating} estrellas`} title={`Calificación: ${review.rating} estrellas`}>{review.rating} ⭐</span> — <span className="profile-review-comment">{review.comment}</span>
                     </div>
                     <button className="delete-review-btn" onClick={() => handleDeleteReview(review, idx)} aria-label={`Eliminar reseña de ${review.bookTitle}`} title={`Eliminar reseña de ${review.bookTitle}`} tabIndex={0}>
                       🗑 Eliminar
@@ -190,7 +183,7 @@ function Profile() {
           </div>
         </article>
       ) : (
-        <p style={{textAlign:'center',color:'#e53935',fontWeight:'bold'}}>No hay usuario logueado.</p>
+        <p className="profile-no-user">No hay usuario logueado.</p>
       )}
     </section>
   );

@@ -10,19 +10,19 @@ function Header() {
 
   return (
     <header className={`header${darkMode ? ' dark' : ''}`}>
-      <nav className="nav" style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:'2rem'}}>
-        <div style={{display:'flex',alignItems:'center',gap:'1.5rem'}}>
-          <h2 className="logo" style={{marginRight:'1.5rem'}}>📚 BookReview-Lite</h2>
-          <ul className="nav-links" style={{display:'flex',alignItems:'center',gap:'1.2rem'}}>
+      <nav className="nav">
+        <div className="nav-group">
+          <h2 className="logo">📚 BookReview-Lite</h2>
+          <ul className="nav-links">
             <li><Link to="/">Inicio</Link></li>
             {user ? (
               <>
-                <li><Link to="/add-book" style={{background:'#2a7ae4',color:'#fff',borderRadius:'8px',padding:'0.3rem 1rem',fontWeight:'bold'}}>Agregar libro</Link></li>
+                <li><Link to="/add-book" className="addbook-link">Agregar libro</Link></li>
                 <li><Link to="/profile">Perfil</Link></li>
                 <li>
                   <button
                     onClick={logout}
-                    style={{background:'#e53935',color:'#fff',border:'none',borderRadius:'8px',padding:'0.3rem 1rem',fontWeight:'bold',cursor:'pointer'}}>
+                    className="logout-btn">
                     Cerrar sesión
                   </button>
                 </li>
@@ -35,13 +35,10 @@ function Header() {
             )}
           </ul>
         </div>
-        <div style={{display:'flex',alignItems:'center',gap:'1rem'}}>
-          {user && (
-            <span style={{background:darkMode?'#23272a':'#e4eaf7',color:darkMode?'#90caf9':'#2a7ae4',fontWeight:'bold',borderRadius:'8px',padding:'0.4rem 1rem',fontSize:'1rem',boxShadow:'0 1px 4px rgba(0,0,0,.08)'}}>Usuario: {user.username}</span>
-          )}
+        <div className="header-user-group">
           <button
             onClick={()=>setDarkMode(m=>!m)}
-            style={{background:darkMode?'#23272a':'#e4eaf7',color:darkMode?'#fff':'#2a7ae4',border:'none',borderRadius:'8px',padding:'0.4rem 1rem',fontWeight:'bold',fontSize:'1rem',cursor:'pointer',boxShadow:'0 1px 4px rgba(0,0,0,.08)',transition:'background .2s'}}
+            className={`header-toggle${darkMode ? ' dark' : ''}`}
             title={darkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
             aria-label={darkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
           >

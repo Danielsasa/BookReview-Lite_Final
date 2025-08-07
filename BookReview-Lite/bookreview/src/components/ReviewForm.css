@@ -1,0 +1,102 @@
+/* ReviewForm.css - visual moderno y organizado */
+.review-form {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #0002;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  animation: fadeInReview 0.7s ease;
+}
+.review-form h3 {
+  font-size: 1.3rem;
+  color: #2a7ae4;
+  margin-bottom: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.review-user {
+  font-size: 1rem;
+  color: #1976d2;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  background: #e4eaf7;
+  border-radius: 8px;
+  padding: 0.2rem 0.7rem;
+  display: inline-block;
+}
+.review-label {
+  font-weight: 500;
+  color: #174ea6;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+.review-input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #cfd8dc;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  background: #f6f8fa;
+  transition: border-color .2s, box-shadow .2s;
+  box-shadow: 0 1px 4px #0001;
+}
+.review-input:focus {
+  border-color: #2a7ae4;
+  box-shadow: 0 2px 8px #2a7ae455;
+  outline: none;
+}
+.review-error {
+  color: #e53935;
+  font-size: 0.97rem;
+  margin-bottom: 0.5rem;
+  background: #ffeaea;
+  border-radius: 6px;
+  padding: 0.2rem 0.7rem;
+  display: inline-block;
+}
+.review-btn {
+  background: linear-gradient(90deg, #2a7ae4 60%, #90caf9 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  font-weight: bold;
+  font-size: 1.08rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #2a7ae455;
+  transition: background .2s, transform .2s;
+}
+.review-btn:hover {
+  background: #174ea6;
+  transform: scale(1.07);
+}
+@keyframes fadeInReview {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.dark .review-form {
+  background: #23272a;
+  color: #fff;
+  box-shadow: 0 4px 24px #0008;
+}
+.dark .review-label {
+  color: #90caf9;
+}
+.dark .review-input {
+  background: #181a1b;
+  color: #fff;
+  border: 1px solid #90caf9;
+}
+.dark .review-btn {
+  background: linear-gradient(90deg, #90caf9 60%, #2a7ae4 100%);
+  color: #23272a;
+}
+.dark .review-btn:hover {
+  background: #2a7ae4;
+  color: #fff;
+}

@@ -1,7 +1,18 @@
+/* Footer.css - estilos para el componente Footer */
+
 .footer {
-  background-color: #1e2a38;
-  color: white;
+  width: 100%;
+  background: var(--footer-bg, #23272a);
+  color: #90caf9;
   text-align: center;
-  padding: 1rem;
+  padding: 1.2rem 0;
   margin-top: 3rem;
+  font-size: 1rem;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+  letter-spacing: 0.5px;
+  transition: background .2s;
+}
+.footer p {
+  margin: 0;
+  font-weight: 500;
 }

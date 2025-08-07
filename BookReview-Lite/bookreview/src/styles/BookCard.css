@@ -1,0 +1,36 @@
+.book-card {
+  cursor: pointer;
+  transition: box-shadow .2s;
+  background: var(--bookcard-bg, #fff);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #2a7ae422;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+.book-cover {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #2a7ae422;
+}
+.book-info h3 {
+  color: #2a7ae4;
+  margin-bottom: 0.5rem;
+}
+.book-info p {
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+body.dark .book-card {
+  --bookcard-bg: #232a3b;
+}
+body.dark .book-info h3 {
+  color: #e4eaf7;
+}
+body.dark .book-info p {
+  color: #e4eaf7;
+}
