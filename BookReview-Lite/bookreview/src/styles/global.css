@@ -131,9 +131,6 @@ body {
   color: #2a7ae4;
   text-shadow: 1px 1px 8px #e4eaf7cc;
 }
-.header {
-  /* ...existing code... */
-}
 .dark .logo {
   color: #90caf9 !important;
   text-shadow: 1px 1px 8px #23272acc;
