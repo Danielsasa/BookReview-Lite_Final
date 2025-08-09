@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
+    "neostandard": "^0.12.2",
     "vite": "^5.4.19"
   }
 }
